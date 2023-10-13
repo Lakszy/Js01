@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: #212121 ; color: #fff">
+        <ul class="language">
+        <li>Javascript</li>
+        </ul>
+</body>
+<script>
+    // InnnerHTML uses more time complexity as it traverse the whole tree 
+   // whenever th whole tree is called
+    function addLanguage(langName){
+       const li = document.createElement('li')
+       li.innerHTML = `${langName}`
+    document.querySelector('.language').appendChild(li)
+}
+      addLanguage("ruby")
+      addLanguage("typescript")
+      addLanguage("pyhton")
+
+
+  function addOptiLang(langName){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+  }
+  addOptiLang("C++")
+  addOptiLang("React")
+
+// Edit 
+const secondLang = document.querySelector("li:nth-child(2)")
+const newli = document.createElement('li');
+newli.textContent = "MOJO"
+secondLang.replaceWith(newli)
+
+//edit 
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = '<li>TypeScript</li>'
+
+// remove
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+
+</script>
+</html>
