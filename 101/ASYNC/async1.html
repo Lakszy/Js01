@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>LAKSHAY</h1>
+    <button id="stop">STOP</button>
+  </body>
+
+  <script>
+    const print = function () {
+      console.log("HELLO");
+    };
+    setInterval(print, 2000);
+
+    // Query selector is used wen you want to access the tag universally rather than an id or class
+    const change = function () {
+      document.querySelector("h1").innerHTML = "<h1>I am lakshay</h1>";
+    };
+     const changeMe = setTimeout(change,3000)
+
+    document.querySelector('#stop').addEventListener("click",function(){
+    clearTimeout(changeMe)
+    },false)
+    
+  </script>
+</html>
