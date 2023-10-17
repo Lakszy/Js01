@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121"></body>
+
+  <script>
+const we =
+    "https://api.weatherapi.com/v1/current.json?key=d7c0218eca0847e6a0a150311230109&q=bulk";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", we);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+
+        if (xhr.readyState === 4){
+            // from api we have recived in the form of string so using JSON.parse
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            console.log(data.w)
+        }
+    }
+    xhr.send()
+  </script>
+</html>
+
+
+<!-- STATE goes from -  0  1  2  3  4  -->

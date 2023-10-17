@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="images">
+    <li><img id="shoe1" src="w1.jpg" width="200px" height="150px" /></li>
+    
+    <li><img id="shoe2" src="w5.png" width="200px" height="150px" /></li>
+    
+    <li><img id="shoe3" src="w3.jpg" width="200px" height="150px" /></li>
+    
+    <li><img id="shoe4" src="w2.jpg" width="200px" height="150px" /></li>
+    
+    <a id="google" href="https://www.google.com" target="_blank">LINK</a>
+    </ul>
+  </body>
+
+  <script>
+document.getElementById('shoe2').onclick = function(){
+    alert("SHOE 2 I AM ")
+  }
+  
+  // eventListener
+document.getElementById('shoe1').addEventListener("click",function(e){
+    console.log(e.timeStamp);
+},false)
+
+// type,time,defaultPrevented
+// target,sourceElement,Currenttarget
+// CurrentX,currentY,screenX,screenY
+// altKey,ctrlKey,ShiftKey,keyCode
+document.getElementById('images').addEventListener("click",function(e){
+    console.log("Clicked Inside the Images")
+})
+
+document.getElementById('shoe1').addEventListener("click",function(e){
+    console.log("Clicked Inside the shoe1");
+
+    // To prevent bubbling->travelling from bottom to top
+    // To prevent capturing->travelling from  top to bottom
+    e.stopPropagation() 
+},false)
+
+
+// To sprevent event from doing its function
+
+document.getElementById('google').addEventListener("click",function(e){
+    e.preventDefault()
+    console.log("Google clicked")
+})
+
+
+// Task is to remmove the images onClick()
+document.querySelector('#images').addEventListener("click",function(e){
+//   tagname to check and prevent the all from disappering all images at once
+  
+    if (e.target.tagName == 'IMG'){
+    let removeIt =  e.target.parentNode ;
+  removeIt.remove()
+}
+},false)
+
+  </script>
+</html>
