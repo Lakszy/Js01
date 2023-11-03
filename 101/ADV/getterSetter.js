@@ -21,4 +21,4 @@ class user {
 const laks = new user("lakshay@123", "khattar123");
 console.log(laks.password);
 
-//*Actual passsword is (khattar123) but we are getting(ttar)
+//*Actual passsword is (khattar123) but we are getting(ttar) obv.  dur to the slice 
